@@ -35,7 +35,7 @@ alias gc="git commit"
 alias gs="git status"
 alias ga="git add"
 alias sl="ls"
-alias la="ls -al"
+alias la="ls -Al"
 alias bc="bc -l"
 alias mkdir="mkdir -pv"
 
