@@ -10,6 +10,7 @@
 " loaded some other way (e.g. saved as `foo`, and then Vim started with
 " `vim -u foo`).
 set nocompatible
+set showmatch " show matching braces when text indicator is over them
 
 " Turn on syntax highlighting.
 syntax on
@@ -82,3 +83,9 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " Add keyboard shortcut for opening CtrlP plugin with ^P
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" use 4 spaces instead of tabs during formatting
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4

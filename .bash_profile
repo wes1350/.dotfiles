@@ -42,3 +42,11 @@ alias mkdir="mkdir -pv"
 # Change terminal prompt color
 # Old PS1: \h:\W \u\$
 export PS1="\h: \e[0;32m\W\e[m \u \t \$ "
+
+# Login commands for afe and afe2
+alias afe='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe"'
+alias afe2='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe2"'
+
+# Alias vim to Homebrew version so that we can use system clipboard
+alias vim="/usr/local/bin/vim"
+
