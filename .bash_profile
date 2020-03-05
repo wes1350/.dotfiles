@@ -34,6 +34,7 @@ alias dc="cd"
 alias gc="git commit"
 alias gs="git status"
 alias ga="git add"
+alias gd="git diff"
 alias sl="ls"
 alias la="ls -Al"
 alias bc="bc -l"
@@ -45,7 +46,7 @@ export PS1="\h: \[\e[0;32m\]\W\[\e[00m\] \u \[\e[0;31m\]\t\[\e[00m\] \$ "
 
 # Login commands for afe and afe2
 alias afe='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe"'
-alias afe2='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe2"'
+alias afe2='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe-2"'
 
 # Alias vim to Homebrew version so that we can use system clipboard
 alias vim="/usr/local/bin/vim"
