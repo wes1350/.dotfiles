@@ -41,7 +41,7 @@ alias mkdir="mkdir -pv"
 
 # Change terminal prompt color
 # Old PS1: \h:\W \u\$
-export PS1="\h: \[\e[0;32m\]\W\[\e[m\] \u \t \$ "
+export PS1="\h: \[\e[0;32m\]\W\[\e[00m\] \u \[\e[0;31m\]\t\[\e[00m\] \$ "
 
 # Login commands for afe and afe2
 alias afe='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe"'
