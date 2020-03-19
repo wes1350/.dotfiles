@@ -48,6 +48,6 @@ export PS1="\h: \[\e[0;32m\]\W\[\e[00m\] \u \[\e[0;31m\]\t\[\e[00m\] \$ "
 alias afe='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe"'
 alias afe2='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe-2"'
 
-# Alias vim to Homebrew version so that we can use system clipboard
-alias vim="/usr/local/bin/vim"
+# Alias vim to Homebrew version so that we can use system clipboard on local machine
+if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then {alias vim="/usr/local/bin/vim"}; fi
 
