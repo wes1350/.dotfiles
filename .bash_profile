@@ -49,5 +49,7 @@ alias afe='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe"'
 alias afe2='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe-2"'
 
 # Alias vim to Homebrew version so that we can use system clipboard on local machine
-if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then {alias vim="/usr/local/bin/vim"}; fi
+if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then alias vim="/usr/local/bin/vim"; fi
 
+# Alias redshift on Ubuntu desktop
+if [[ "$(hostname)" == "wesley-desktop" ]]; then alias redshift="redshift -O 2500 -r"; fi
