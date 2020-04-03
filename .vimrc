@@ -89,3 +89,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+
+" open split windows to the right and bottom
+set splitbelow
+set splitright
