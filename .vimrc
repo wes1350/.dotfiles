@@ -93,3 +93,12 @@ set softtabstop=4
 " open split windows to the right and bottom
 set splitbelow
 set splitright
+
+" Map save commands with capitals to lowercase versions
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
+" Make vim autocomplete behavior to the same as terminal
+set wildmode=longest,list
