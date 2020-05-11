@@ -102,3 +102,10 @@ set splitright
 
 " Make vim autocomplete behavior to the same as terminal
 set wildmode=longest,list
+
+" Remap leader key to space
+:let mapleader = "\<Space>"
+
+" Shortcut for commenting out lines in visual mode
+vnoremap <Leader>[ :g/./normal!<Space>I#<Space><Esc>
+vnoremap <Leader>] :s/^#<Space>//<Esc>
