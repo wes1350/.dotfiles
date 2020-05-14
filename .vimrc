@@ -107,5 +107,28 @@ set wildmode=longest,list
 :let mapleader = "\<Space>"
 
 " Shortcut for commenting out lines in visual mode
-vnoremap <Leader>[ :g/./normal!<Space>I#<Space><Esc>
+vnoremap <Leader>[ :g/./normal!<Space>0i#<Space><Esc>
 vnoremap <Leader>] :s/^#<Space>//<Esc>
+
+" Quick copy paste
+nmap <Leader>y "+y
+nmap <Leader>d "+d
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Search results centered please
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+" quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
