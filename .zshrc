@@ -2,7 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/wesleyrunnels/.oh-my-zsh"
+if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then export ZSH="/Users/wesleyrunnels/.oh-my-zsh"; fi
+if [[ "$(hostname)" == "Macbook-Pro.local" ]]; then export ZSH="/Users/wesley/.oh-my-zsh"; fi
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,7 +14,7 @@ ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -64,8 +66,8 @@ ZSH_THEME="robbyrussell"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
@@ -98,6 +100,29 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/wesley/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/wesley/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/wesley/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/wesley/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/wesley/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/wesley/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/wesley/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/wesley/google-cloud-sdk/completion.zsh.inc'; fi
+
+
 # Aliases
 alias dc="cd"
 alias gc="git commit"
@@ -113,15 +138,12 @@ alias mkdir="mkdir -pv"
 # Set editing mode to vim in zsh
 set -o vi
 
-# Login commands for afe and afe2
-alias afe='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe"'
-alias afe2='gcloud compute --project "kraskagroup" ssh --zone "us-east1-b" "afe-2"'
-
 # Alias vim to Homebrew version so that we can use system clipboard on local machine
 if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then alias vim="/usr/local/bin/vim"; fi
+
+if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then export PATH="/Users/wesleyrunnels/anaconda/bin:$PATH"; fi
+
 
 # Alias redshift on Ubuntu desktop
 if [[ "$(hostname)" == "wesley-desktop" ]]; then alias redshift="redshift -O 2500 -r"; fi
 
-# added by Anaconda3 4.3.0 installer
-export PATH="/Users/wesleyrunnels/anaconda/bin:$PATH"
