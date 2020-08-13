@@ -136,3 +136,27 @@ nnoremap <C-l> <C-w>l
 " Set tab behavior for javascript and html files
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+
+set lazyredraw
+
+" vim syntax highlighting is very slow for certain files (e.g. TypeScript) so set this to use
+" a different regex engine that doesn't have the smae issue
+" set re=1
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" JSX/TSX Support
+" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+
+augroup SyntaxSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+augroup END
+
+" Initialize plugin system
+call plug#end()

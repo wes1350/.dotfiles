@@ -10,7 +10,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then export ZSH="/Users/wesleyrunnels/.oh-my-zsh"; fi
-if [[ "$(hostname)" == "Macbook-Pro.local" ]]; then export ZSH="/Users/wesley/.oh-my-zsh"; fi
+if [[ "$(hostname)" == "MacBook-Pro.local" ]]; then export ZSH="/Users/wesley/.oh-my-zsh"; fi
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -79,6 +79,19 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # User configuration
 
@@ -155,3 +168,8 @@ if [[ "$(hostname)" == "wesley-desktop" ]]; then alias redshift="redshift -O 250
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# For nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
