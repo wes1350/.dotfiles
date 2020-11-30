@@ -144,14 +144,17 @@ if [ -f '/Users/wesley/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/we
 
 # Aliases
 alias dc="cd"
-alias gc="git commit -m"
+alias gc="git commit"
+alias gcm="git commit -m"
 alias gs="git status"
 alias ga="git add"
 alias gd="git diff"
+alias gds="git diff --staged"
 alias gg="git graph"
 alias gpl="git pull"
 alias gpu="git push"
 alias gsh="git stash"
+alias gsub="git submodule update --recursive"
 alias sl="ls"
 alias la="ls -Al"
 alias bc="bc -l"
