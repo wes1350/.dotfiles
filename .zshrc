@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then export ZSH="/Users/wesleyrunnels/.oh-my-zsh"; fi
+if [[ "$(hostname)" == "Wesleys-MBP" ]]; then export ZSH="/Users/wesleyrunnels/.oh-my-zsh"; fi
 if [[ "$(hostname)" == "MacBook-Pro.local" ]]; then export ZSH="/Users/wesley/.oh-my-zsh"; fi
 
 
