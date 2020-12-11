@@ -168,9 +168,9 @@ alias npms="npm start"
 set -o vi
 
 # Alias vim to Homebrew version so that we can use system clipboard on local machine
-if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then alias vim="/usr/local/bin/vim"; fi
+if [[ "$(hostname)" == "Wesleys-MBP" ]]; then alias vim="/usr/local/bin/vim"; fi
 
-if [[ "$(hostname)" == "Wesleys-Macbook-Pro.local" ]]; then export PATH="/Users/wesleyrunnels/anaconda/bin:$PATH"; fi
+if [[ "$(hostname)" == "Wesleys-MBP" ]]; then export PATH="/Users/wesleyrunnels/anaconda/bin:$PATH"; fi
 
 
 # Alias redshift on Ubuntu desktop
@@ -186,4 +186,4 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # For setting up einblick aliases and setup
-if [[ "$(hostname)" == "MacBook-Pro.local" ]]; then source ~/.einblick_setup; fi
+if [[ "$(hostname)" == "MacBook-Pro" ]]; then source ~/.einblick_setup; fi
