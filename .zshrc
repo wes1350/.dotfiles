@@ -10,7 +10,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 if [[ "$(hostname)" == "Wesleys-MBP" ]]; then export ZSH="/Users/wesleyrunnels/.oh-my-zsh"; fi
-if [[ "$(hostname)" == "MacBook-Pro.local" ]]; then export ZSH="/Users/wesley/.oh-my-zsh"; fi
+if [[ "$(hostname)" == "MacBook-Pro" ]]; then export ZSH="/Users/wesley/.oh-my-zsh"; fi
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -153,12 +153,16 @@ alias gds="git diff --staged"
 alias gg="git graph"
 alias gpl="git pull"
 alias gps="git push"
-alias gsh="git stash"
+alias gst="git stash"
 alias gsub="git submodule update --recursive"
+alias gch="git checkout"
+alias gchb="git checkout -b"
 alias sl="ls"
 alias la="ls -Al"
 alias bc="bc -l"
 alias mkdir="mkdir -pv"
+alias npmi="npm install"
+alias npms="npm start"
 
 # Set editing mode to vim in zsh
 set -o vi
