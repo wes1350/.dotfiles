@@ -160,8 +160,17 @@ alias gsub="git submodule update --recursive"
 alias gch="git checkout"
 alias gchb="git checkout -b"
 alias gchm="git checkout master"
+alias gr="git rebase"
 alias gra="git rebase --abort"
 alias grc="git rebase --continue"
+alias grh="git reset --hard"
+alias gf="git fetch"
+alias gcl="git checkout --"
+
+nor(){
+git checkout "NOR-${1}"
+}
+
 alias sl="ls"
 alias la="ls -Al"
 alias bc="bc -l"
@@ -170,6 +179,7 @@ alias npmi="npm install"
 alias npms="npm start"
 alias dcl="docker container list -a"
 alias sz="source ~/.zshrc"
+alias vz="vim ~/.zshrc"
 
 # Set editing mode to vim in zsh
 set -o vi
