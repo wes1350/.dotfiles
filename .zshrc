@@ -17,7 +17,8 @@ if [[ "$(hostname)" == "MacBook-Pro.local" ]]; then export ZSH="/Users/wesley/.o
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -76,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
+plugins=(zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -150,6 +151,7 @@ alias gs="git status"
 alias ga="git add"
 alias gd="git diff"
 alias gds="git diff --staged"
+alias gdw="git diff --word-diff=color"
 alias gg="git graph"
 alias gpl="git pull"
 alias gps="git push"
@@ -159,16 +161,24 @@ alias gstp="git stash pop"
 alias gsub="git submodule update --recursive"
 alias gch="git checkout"
 alias gchb="git checkout -b"
-alias gchm="git checkout master"
+alias gchm="git checkout master; gsub"
 alias gr="git rebase"
 alias gra="git rebase --abort"
 alias grc="git rebase --continue"
+alias grm="git rebase master"
+alias grs="git rebase --skip"
 alias grh="git reset --hard"
 alias gf="git fetch"
 alias gcl="git checkout --"
+alias gma="git merge --abort"
 
 nor(){
 git checkout "NOR-${1}"
+gsub
+}
+
+gdn(){
+gd HEAD~${1} HEAD
 }
 
 alias sl="ls"
@@ -177,6 +187,8 @@ alias bc="bc -l"
 alias mkdir="mkdir -pv"
 alias npmi="npm install"
 alias npms="npm start"
+alias mi="npm run migrate"
+alias tst="npm run test"
 alias dcl="docker container list -a"
 alias sz="source ~/.zshrc"
 alias vz="vim ~/.zshrc"
@@ -203,4 +215,4 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # For setting up einblick aliases and setup
-if [[ "$(hostname)" == "MacBook-Pro" ]]; then source ~/.einblick_setup; fi
+if [[ "$(hostname)" == "MacBook-Pro.local" ]]; then source ~/.einblick_setup; fi
