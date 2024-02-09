@@ -11,6 +11,10 @@ fi
 # Path to your oh-my-zsh installation.
 if [[ "$(hostname)" == "Wesleys-MBP" ]]; then export ZSH="/Users/wesleyrunnels/.oh-my-zsh"; fi
 if [[ "$(hostname)" == "MacBook-Pro.local" ]]; then export ZSH="/Users/wesley/.oh-my-zsh"; fi
+# M1
+if [[ "$(hostname)" == "Wesleys-MacBook-Pro.local" ]]; then export ZSH="/Users/wesley/.oh-my-zsh"; fi
+
+
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -216,3 +220,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # For setting up einblick aliases and setup
 if [[ "$(hostname)" == "MacBook-Pro.local" ]]; then source ~/.einblick_setup; fi
+
+bindkey -v
